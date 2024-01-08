@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Главное меню</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    body {
+    background: #98FB98;
+    }
+
+    div {
+    text-align: center;
+    margin-top: 10px
+    }
+
+    a {
+    text-decoration: none
+    }
+
+    </style>
+</head>
+<body>
+<!--<a th:href="@{patients}"> Список пациентов</a>-->
+<!--<a th:href="@{add_patient}">Добавить пациента</a>-->
+
+<div>
+    <button type="submit">
+        <a th:href="@{patients}">Список пациентов</a>
+    </button>
+</div>
+
+<div>
+    <button type="submit">
+        <a th:href="@{add_patient}">Добавить пациента</a>
+    </button>
+</div>
+
+</body>
+</html>

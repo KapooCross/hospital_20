@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление пациента</title>
+    <style>
+
+.wrapper {
+  background-color: whitesmoke;
+  list-style-type: none;
+  padding: 0;
+  border-radius: 3px;
+}
+.form-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: .5em;
+}
+.form-row > label {
+  padding: .5em 1em .5em 0;
+  flex: 1;
+}
+.form-row > input {
+  flex: 2;
+}
+
+button {
+  background: gray;
+  color: white;
+  border: 0;
+  padding: .5em;
+}
+
+    </style>
+</head>
+<body>
+<h2>Добавление пациента</h2>
+
+
+<!--<form action="#" th:action="@{/add_patient}" method="post" th:object="${patient}">-->
+<!--    <label>Фамилия, имя, отчетсво: </label>-->
+<!--    <input type="text" th:field="*{fullName}"><br>-->
+
+<!--    <label>Дата рождения: </label>-->
+<!--    <input type="text" th:field="*{dateOfBirth}"><br>-->
+
+<!--    <label>Диагноз: </label>-->
+<!--    <select th:field="*{diagnosis}">-->
+<!--        <option th:each="diag : ${allDiagnosis}" th:value="${diag}" th:text="${diag}"/>-->
+<!--    </select> <br>-->
+
+<!--    <label>Дата поступления: </label>-->
+<!--    <input type="text" th:field="*{dateOfAdmission}"><br>-->
+
+<!--    <label>Дата выписки: </label>-->
+<!--    <input type="text" th:field="*{dateOfDischarge}"><br>-->
+
+<!--    <label>Номер отделения: </label>-->
+<!--    <input type="text" th:field="*{departmentId}"><br>-->
+
+<!--    <button type="submit">Ввести данные</button>-->
+
+<!--</form>-->
+
+<form action="#" th:action="@{/add_patient}" method="post" th:object="${patient}">
+    <ul class="wrapper">
+        <li class="form-row">
+            <label>Фамилия, имя, отчетсво: </label>
+            <input type="text" th:field="*{fullName}">
+        </li>
+        <li class="form-row">
+            <label>Дата рождения: </label>
+            <input type="text" th:field="*{dateOfBirth}">
+        </li>
+        <li class="form-row">
+            <label>Диагноз: </label>
+            <select th:field="*{diagnosis}">
+                <option th:each="diag : ${allDiagnosis}" th:value="${diag}" th:text="${diag}"/>
+            </select> <br>
+        </li>
+        <li class="form-row">
+            <label>Дата поступления: </label>
+            <input type="text" th:field="*{dateOfAdmission}">
+        </li>
+        <li class="form-row">
+            <label>Дата выписки: </label>
+            <input type="text" th:field="*{dateOfDischarge}">
+        </li>
+        <li class="form-row">
+            <label>Номер отделения: </label>
+            <input type="text" th:field="*{departmentId}">
+        </li>
+        <button type="submit">Ввести данные</button>
+
+
+    </ul>
+</form>
+
+</body>
+</html>

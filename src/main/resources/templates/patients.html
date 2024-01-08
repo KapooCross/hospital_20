@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пациентов</title>
+    <style type="text/css">
+    table, td, th {
+    border-collapse: collapse;
+    border: 2px solid black;
+   }
+
+   TABLE {
+    width: 600px;
+
+   }
+   TD, TH {
+    padding: 3px;
+   }
+   TH {
+    text-align: center;
+    background: #FFDEAD;
+   }
+
+    </style>
+</head>
+<body>
+<h1>Список пациентов</h1>
+
+<!--<p th:each="patient : ${patientsList}" th:text="${patient.fullName}"></p>-->
+
+<table>
+    <tr>
+        <th>Фио</th>
+        <th>Дата рождения</th>
+        <th>Диагноз</th>
+        <th>Дата поступления</th>
+        <th>Дата выписки</th>
+        <th>Номер отделения</th>
+    </tr>
+    <tr th:each="patient : ${patientsList}">
+        <td th:text="${patient.fullName}"></td>
+        <td th:text="${patient.dateOfBirth}"></td>
+        <td th:text="${patient.diagnosis}"></td>
+        <td th:text="${patient.dateOfAdmission}"></td>
+        <td th:text="${patient.dateOfDischarge}"></td>
+        <td th:text="${patient.departmentId}"></td>
+    </tr>
+
+
+</table>
+
+</body>
+</html>
